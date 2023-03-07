@@ -24,7 +24,7 @@ describe('ScrollService', () => {
   let sessionStorage: Storage;
 
   class MockPlatformLocation {
-    hash: string;
+    hash: string = '';
   }
 
   class MockDocument {

@@ -2,7 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Inject, Injectable } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { ReplaySubject } from 'rxjs';
-import { ScrollSpyInfo, ScrollSpyService } from 'app/shared/scroll-spy.service';
+import { ScrollSpyInfo, ScrollSpyService } from './scroll-spy.service';
 import { unwrapHtml } from 'safevalues';
 import { fromInnerHTML } from './security';
 

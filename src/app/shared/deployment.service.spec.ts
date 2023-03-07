@@ -1,7 +1,7 @@
 import { Injector } from '@angular/core';
-import { environment } from 'environments/environment';
-import { LocationService } from 'app/shared/location.service';
-import { MockLocationService } from 'testing/location.service';
+import { environment } from '../../environments/environment';
+import { LocationService } from './location.service';
+import { MockLocationService } from '../../testing/location.service';
 import { Deployment } from './deployment.service';
 
 describe('Deployment service', () => {

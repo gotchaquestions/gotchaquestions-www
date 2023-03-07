@@ -3,8 +3,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { asapScheduler, BehaviorSubject } from 'rxjs';
 
-import { ScrollService } from 'app/shared/scroll.service';
-import { TocItem, TocService } from 'app/shared/toc.service';
+import { ScrollService } from '../../shared/scroll.service';
+import { TocItem, TocService } from '../../shared/toc.service';
 import { TocComponent } from './toc.component';
 
 describe('TocComponent', () => {
@@ -123,7 +123,7 @@ describe('TocComponent', () => {
 
         it('should not have secondary items', () => {
           expect(tocComponent.type).toEqual('EmbeddedSimple');
-          const aSecond = page.listItems.find(item => item.classes.secondary);
+          const aSecond = page.listItems.find(item => item.classes['secondary']);
           expect(aSecond).withContext('should not find a secondary').toBeFalsy();
         });
 
@@ -147,7 +147,7 @@ describe('TocComponent', () => {
         });
 
         it('should not display the h1 item', () => {
-          expect(page.listItems.find(item => item.classes.h1)).withContext('should not find h1 item').toBeFalsy();
+          expect(page.listItems.find(item => item.classes['h1'])).withContext('should not find h1 item').toBeFalsy();
         });
 
         it('should be in "collapsed" (not expanded) state at the start', () => {
@@ -155,7 +155,7 @@ describe('TocComponent', () => {
         });
 
         it('should have "collapsed" class at the start', () => {
-          expect(tocComponentDe.children[0].classes.collapsed).toEqual(true);
+          expect(tocComponentDe.children[0].classes['collapsed']).toEqual(true);
         });
 
         it('should display expando buttons', () => {
@@ -169,7 +169,7 @@ describe('TocComponent', () => {
 
         // CSS will hide items with the secondary class when collapsed
         it('should have secondary item with a secondary class', () => {
-          const aSecondary = page.listItems.find(item => item.classes.secondary);
+          const aSecondary = page.listItems.find(item => item.classes['secondary']);
           expect(aSecondary).withContext('should find a secondary').toBeTruthy();
         });
 
@@ -185,7 +185,7 @@ describe('TocComponent', () => {
           });
 
           it('should not have "collapsed" class', () => {
-            expect(tocComponentDe.children[0].classes.collapsed).toBeFalsy();
+            expect(tocComponentDe.children[0].classes['collapsed']).toBeFalsy();
           });
 
           it('should not scroll', () => {
@@ -217,7 +217,7 @@ describe('TocComponent', () => {
           });
 
           it('should not have "collapsed" class', () => {
-            expect(tocComponentDe.children[0].classes.collapsed).toBeFalsy();
+            expect(tocComponentDe.children[0].classes['collapsed']).toBeFalsy();
           });
 
           it('should not scroll', () => {
@@ -271,7 +271,7 @@ describe('TocComponent', () => {
 
     it('should not have secondary items', () => {
       expect(tocComponent.type).toEqual('Floating');
-      const aSecond = page.listItems.find(item => item.classes.secondary);
+      const aSecond = page.listItems.find(item => item.classes['secondary']);
       expect(aSecond).withContext('should not find a secondary').toBeFalsy();
     });
 

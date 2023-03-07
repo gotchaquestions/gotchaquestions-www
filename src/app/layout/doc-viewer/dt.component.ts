@@ -1,5 +1,5 @@
 import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
-import { DocumentContents } from 'app/documents/document.service';
+import { DocumentContents } from '../../documents/document.service';
 
 @Component({
   selector: 'aio-dt',
@@ -14,15 +14,16 @@ import { DocumentContents } from 'app/documents/document.service';
 })
 export class DtComponent {
 
-  @Input() doc: DocumentContents;
+  @Input() doc: DocumentContents = {id: '1', contents: this.text};
   @Output() docChange = new EventEmitter<DocumentContents>();
 
   @ViewChild('dt', { read: ElementRef, static: true })
-  dt: ElementRef;
+  dt: ElementRef | undefined;
 
   get text() { return this.doc && this.doc.contents; }
 
   dtextSet() {
+    if (!this.dt) return;
     this.doc.contents = this.dt.nativeElement.value;
     this.docChange.emit({ ...this.doc });
   }

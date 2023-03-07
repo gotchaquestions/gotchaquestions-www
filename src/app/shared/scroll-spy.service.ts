@@ -3,7 +3,7 @@ import { DOCUMENT } from '@angular/common';
 import { fromEvent, Observable, ReplaySubject, Subject } from 'rxjs';
 import { auditTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
 
-import { ScrollService } from 'app/shared/scroll.service';
+import { ScrollService } from './scroll.service';
 
 
 export interface ScrollItem {
@@ -121,8 +121,8 @@ export class ScrollSpyService {
   private onStopListening = new Subject<void>();
   private resizeEvents = fromEvent(window, 'resize').pipe(auditTime(300), takeUntil(this.onStopListening));
   private scrollEvents = fromEvent(window, 'scroll').pipe(auditTime(10), takeUntil(this.onStopListening));
-  private lastContentHeight: number;
-  private lastMaxScrollTop: number;
+  private lastContentHeight: number = 10;
+  private lastMaxScrollTop: number = 10;
 
   constructor(@Inject(DOCUMENT) private doc: any, private scrollService: ScrollService) {}
 

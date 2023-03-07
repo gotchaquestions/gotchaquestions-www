@@ -23,7 +23,7 @@ describe('ElementsLoader', () => {
             ['element-a-selector', async () => createFakeCustomElementModule('element-a-module')],
             ['element-b-selector', async () => createFakeCustomElementModule('element-b-module')],
             ['element-c-selector', async () => createFakeCustomElementModule('element-c-module')],
-          ]),
+          ] as unknown as any),
         },
       ]
     });
@@ -227,12 +227,16 @@ describe('ElementsLoader', () => {
 
 class FakeCustomElementModule implements WithCustomElementComponent {
   static readonly modulePath: string;
-  customElementComponent: Type<any>;
+  // @ts-ignore
+  customElementComponent: Type<any> | undefined;
 }
 
 function createFakeComponent(inputName: string): Type<any> {
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  @Component({inputs: [inputName]})
+  @Component({
+    template: ``,
+    inputs: [inputName]
+  })
   class FakeComponent {}
 
   return FakeComponent;

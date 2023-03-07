@@ -2,8 +2,8 @@ import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, QueryList, Vie
 import { asapScheduler, combineLatest, Subject } from 'rxjs';
 import { startWith, subscribeOn, takeUntil } from 'rxjs/operators';
 
-import { ScrollService } from 'app/shared/scroll.service';
-import { TocItem, TocService } from 'app/shared/toc.service';
+import { ScrollService } from '../../shared/scroll.service';
+import { TocItem, TocService } from '../../shared/toc.service';
 
 type TocType = 'None' | 'Floating' | 'EmbeddedSimple' | 'EmbeddedExpandable';
 
@@ -18,10 +18,10 @@ export class TocComponent implements OnInit, AfterViewInit, OnDestroy {
   type: TocType = 'None';
   isCollapsed = true;
   isEmbedded = false;
-  @ViewChildren('tocItem') private items: QueryList<ElementRef>;
+  @ViewChildren('tocItem') private items: QueryList<ElementRef> | undefined;
   private onDestroy = new Subject<void>();
   primaryMax = 4;
-  tocList: TocItem[];
+  tocList: TocItem[] = [];
 
   constructor(
     private scrollService: ScrollService,
@@ -53,7 +53,7 @@ export class TocComponent implements OnInit, AfterViewInit, OnDestroy {
       // which, in turn, are caused by the rendering that happened due to a ChangeDetection.
       // Without asap, we would be updating the model while still in a ChangeDetection handler,
       // which is disallowed by Angular.
-      combineLatest([
+      this.items && combineLatest([
         this.tocService.activeItemIndex.pipe(subscribeOn(asapScheduler)),
         this.items.changes.pipe(startWith(this.items)),
       ])

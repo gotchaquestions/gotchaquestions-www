@@ -5,17 +5,17 @@ import { Observable, asapScheduler, of, lastValueFrom } from 'rxjs';
 import { EMPTY_HTML, htmlEscape } from 'safevalues';
 import { htmlSafeByReview } from 'safevalues/restricted/reviewed';
 
-import { FILE_NOT_FOUND_ID, FETCHING_ERROR_ID } from 'app/documents/document.service';
-import { CustomElementsModule } from 'app/custom-elements/custom-elements.module';
-import { ElementsLoader } from 'app/custom-elements/elements-loader';
-import { Logger } from 'app/shared/logger.service';
-import { fromOuterHTML } from 'app/shared/security';
-import { TocService } from 'app/shared/toc.service';
+import { FILE_NOT_FOUND_ID, FETCHING_ERROR_ID } from '../../documents/document.service';
+import { CustomElementsModule } from '../../custom-elements/custom-elements.module';
+import { ElementsLoader } from '../../custom-elements/elements-loader';
+import { Logger } from '../../shared/logger.service';
+import { fromOuterHTML } from '../../shared/security';
+import { TocService } from '../../shared/toc.service';
 import {
 MockTitle, MockTocService, ObservableWithSubscriptionSpies,
 TestDocViewerComponent, TestModule, TestParentComponent, MockElementsLoader
-} from 'testing/doc-viewer-utils';
-import { MockLogger } from 'testing/logger.service';
+} from '../../../testing/doc-viewer-utils';
+import { MockLogger } from '../../../testing/logger.service';
 import { DocViewerComponent, NO_ANIMATIONS } from './doc-viewer.component';
 
 describe('DocViewerComponent', () => {

@@ -2,13 +2,13 @@ import { Component, NgModule, ViewChild } from '@angular/core';
 import { Title, Meta } from '@angular/platform-browser';
 
 import { Observable } from 'rxjs';
+import {DocViewerComponent} from "../app/layout/doc-viewer/doc-viewer.component";
+import {DocumentContents} from "../app/documents/document-contents";
+import {Logger} from "../app/shared/logger.service";
+import {TocService} from "../app/shared/toc.service";
+import {MockLogger} from "./logger.service";
+import {ElementsLoader} from "../app/custom-elements/elements-loader";
 
-import { DocumentContents } from 'app/documents/document.service';
-import { DocViewerComponent } from 'app/layout/doc-viewer/doc-viewer.component';
-import { Logger } from 'app/shared/logger.service';
-import { TocService } from 'app/shared/toc.service';
-import { MockLogger } from 'testing/logger.service';
-import { ElementsLoader } from 'app/custom-elements/elements-loader';
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -17,8 +17,8 @@ import { ElementsLoader } from 'app/custom-elements/elements-loader';
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 export class TestDocViewerComponent extends DocViewerComponent {
-  override currViewContainer: HTMLElement;
-  override nextViewContainer: HTMLElement;
+  override currViewContainer: HTMLElement = document.createElement('div');
+  override nextViewContainer: HTMLElement = document.createElement('div');
 
   // Only used for type-casting; the actual implementation is irrelevant.
   override prepareTitleAndToc(_targetElem: HTMLElement, _docId: string): () => void {
@@ -44,7 +44,7 @@ export class TestDocViewerComponent extends DocViewerComponent {
 })
 export class TestParentComponent {
   currentDoc?: DocumentContents|null;
-  @ViewChild(DocViewerComponent, {static: true}) docViewer: DocViewerComponent;
+  @ViewChild(DocViewerComponent, {static: true}) docViewer: DocViewerComponent | undefined;
 }
 
 // Mock services.

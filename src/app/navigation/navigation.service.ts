@@ -4,8 +4,8 @@ import {HttpClient} from '@angular/common/http';
 import {AsyncSubject, combineLatest, connectable, Observable, ReplaySubject} from 'rxjs';
 import {map} from 'rxjs/operators';
 
-import {LocationService} from 'app/shared/location.service';
-import {CONTENT_URL_PREFIX} from 'app/documents/document.service';
+import {LocationService} from '../shared/location.service';
+import {CONTENT_URL_PREFIX} from '../documents/document.service';
 
 // Import and re-export the Navigation model types
 import { CurrentNodes, NavigationNode, NavigationResponse, NavigationViews, VersionInfo } from './navigation.model';

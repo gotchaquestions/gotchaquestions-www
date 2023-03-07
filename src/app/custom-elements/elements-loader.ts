@@ -1,8 +1,9 @@
 import { createNgModuleRef, Inject, Injectable, NgModuleRef, Type } from '@angular/core';
-import { ELEMENT_MODULE_LOAD_CALLBACKS_TOKEN, WithCustomElementComponent } from './element-registry';
-import { from, Observable, of } from 'rxjs';
 import { createCustomElement } from '@angular/elements';
 import { LoadChildrenCallback } from '@angular/router';
+import { from, Observable, of } from 'rxjs';
+
+import { ELEMENT_MODULE_LOAD_CALLBACKS_TOKEN, WithCustomElementComponent } from './element-registry';
 
 
 @Injectable()

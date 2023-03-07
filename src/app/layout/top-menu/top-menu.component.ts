@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CurrentNode, NavigationNode } from 'app/navigation/navigation.service';
+import { CurrentNode, NavigationNode } from '../../navigation/navigation.model';
 
 @Component({
   selector: 'aio-top-menu',
@@ -15,7 +15,7 @@ import { CurrentNode, NavigationNode } from 'app/navigation/navigation.service';
     </nav>`
 })
 export class TopMenuComponent {
-  @Input() nodes: NavigationNode[];
+  @Input() nodes: NavigationNode[] = [];
   @Input() currentNode: CurrentNode | undefined;
 
   get currentUrl(): string | null { return this.currentNode ? this.currentNode.url : null; }

@@ -3,7 +3,7 @@ import { Inject, Injectable } from '@angular/core';
 import { trustedResourceUrl, unwrapResourceUrl } from 'safevalues';
 
 import { formatErrorEventForAnalytics } from './analytics-format-error';
-import { WindowToken } from '../shared/window';
+import { WindowToken } from './window';
 import { environment } from '../../environments/environment';
 
 /** Extension of `Window` with potential Google Analytics fields. */
@@ -12,7 +12,7 @@ interface WindowWithAnalytics extends Window {
   gtag?(...args: any[]): void;
   /** Legacy Universal Analytics `analytics.js` field. */
   ga?(...args: any[]): void;
-};
+}
 
 @Injectable()
 /**
@@ -30,7 +30,7 @@ export class AnalyticsService {
   private readonly isProtractor = this.window.name.includes('NG_DEFER_BOOTSTRAP');
 
   /** Previously reported URL. Cached to allow for duplicates being filtered. */
-  private previousUrl: string;
+  private previousUrl: string = '';
 
   constructor(@Inject(WindowToken) private window: WindowWithAnalytics) {
     this._installGlobalSiteTag();

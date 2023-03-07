@@ -1,7 +1,7 @@
 import { Injector } from '@angular/core';
 
-import { AnalyticsService } from 'app/shared/analytics.service';
-import { WindowToken } from 'app/shared/window';
+import { AnalyticsService } from './analytics.service';
+import { WindowToken } from './window';
 
 describe('AnalyticsService', () => {
   let service: AnalyticsService;

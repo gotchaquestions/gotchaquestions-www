@@ -9,8 +9,8 @@ import { htmlSafeByReview } from 'safevalues/restricted/reviewed';
 import { DocumentContents, UnsafeDocumentContents } from './document-contents';
 export { DocumentContents } from './document-contents';
 
-import { LocationService } from 'app/shared/location.service';
-import { Logger } from 'app/shared/logger.service';
+import { LocationService } from '../shared/location.service';
+import { Logger } from '../shared/logger.service';
 
 export const FILE_NOT_FOUND_ID = 'file-not-found';
 export const FETCHING_ERROR_ID = 'fetching-error';

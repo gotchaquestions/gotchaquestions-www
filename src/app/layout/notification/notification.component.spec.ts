@@ -2,8 +2,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { Component, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { CurrentDateToken } from 'app/shared/current-date';
-import { LocalStorage, NoopStorage } from 'app/shared/storage.service';
+import { CurrentDateToken } from '../../shared/current-date';
+import { LocalStorage, NoopStorage } from '../../shared/storage.service';
 import { NotificationComponent } from './notification.component';
 
 describe('NotificationComponent', () => {

@@ -1,63 +1,16 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
-  <title>GotchaQuestions</title>
-  <meta name="Description" content="GPT without the woke">
+  <title>GotchaquestionsWww</title>
   <base href="/">
-
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="search" type="application/opensearchdescription+xml" href="assets/opensearch.xml">
-  <link rel="icon" type="image/x-icon" href="assets/images/favicons/favicon.ico">
-  <link rel="icon" type="image/png" href="assets/images/favicons/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="assets/images/favicons/favicon-194x194.png" sizes="194x194">
-  <link rel="icon" type="image/png" href="assets/images/favicons/favicon-96x96.png" sizes="96x96">
-  <link rel="icon" type="image/png" href="assets/images/favicons/favicon-16x16.png" sizes="16x16">
-  <link rel="apple-touch-icon" sizes="144x144" href="assets/images/favicons/favicon-144x144.png">
-  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/favicons/favicon-144x144.png">
-
-  <!-- NOTE: These need to be kept in sync with `ngsw-config.template.json`. -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block">
-  <!-- -->
-
-  <style id="aio-initial-theme">
-    @import url("light-theme.css") (prefers-color-scheme: light);
-    @import url("dark-theme.css") (prefers-color-scheme: dark);
-  </style>
-
-  <link rel="manifest" href="pwa-manifest.json">
-  <meta name="theme-color" content="#1976d2">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="translucent">
-
-  <script>
-    // Dynamically, pre-emptively, add `noindex`, which will be removed when the doc is ready and valid
-    tag = document.createElement('meta'); tag.name = 'robots'; tag.content = 'noindex';
-    document.head.appendChild(tag);
-  </script>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-
-<body>
-
-  <aio-shell></aio-shell>
-
-  <noscript>
-    <div class="background-sky hero"></div>
-    <section id="intro" style="text-shadow: 1px 1px #1976d2;">
-      <div class="hero-logo"></div>
-      <div class="homepage-container">
-        <div class="hero-headline">GPT without the woke</div>
-      </div>
-    </section>
-    <h2 style="color: red; margin-top: 40px; position: relative; text-align: center; text-shadow: 1px 1px #fafafa; border-top: none;">
-      <b><i>This website requires JavaScript.</i></b>
-    </h2>
-  </noscript>
-
+<body class="mat-typography">
+  <app-root></app-root>
 </body>
-
 </html>

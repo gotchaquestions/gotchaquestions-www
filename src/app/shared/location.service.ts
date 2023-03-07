@@ -4,7 +4,7 @@ import { Location, PlatformLocation } from '@angular/common';
 import { ReplaySubject } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
-import { AnalyticsService } from 'app/shared/analytics.service';
+import { AnalyticsService } from './analytics.service';
 import { ScrollService } from './scroll.service';
 
 @Injectable()

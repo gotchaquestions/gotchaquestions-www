@@ -1,5 +1,5 @@
 import { NavMenuComponent } from './nav-menu.component';
-import { NavigationNode } from 'app/navigation/navigation.service';
+import { NavigationNode } from '../../navigation/navigation.model';
 
 // Testing the component class behaviors, independent of its template
 // No dependencies, no life-cycle hooks. Just new it and test :)

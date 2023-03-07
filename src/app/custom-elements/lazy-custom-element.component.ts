@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, OnInit } from '@angular/core';
-import { Logger } from 'app/shared/logger.service';
+import { Logger } from '../shared/logger.service';
 import { ElementsLoader } from './elements-loader';
 
 @Component({

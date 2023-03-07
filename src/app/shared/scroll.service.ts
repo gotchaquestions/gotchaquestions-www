@@ -16,8 +16,8 @@ export const topMargin = 16;
  */
 @Injectable()
 export class ScrollService implements OnDestroy {
-  private _topOffset: number|null;
-  private _topOfPageElement: HTMLElement;
+  private _topOffset: number|null = null;
+  private _topOfPageElement: HTMLElement = this.document.getElementById('top-of-page') || this.document.body;
   private onDestroy = new Subject<void>();
 
   // The scroll position which has to be restored, after a `popstate` event.

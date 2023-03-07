@@ -1,7 +1,7 @@
 import { animate, state, style, trigger, transition } from '@angular/animations';
 import { Component, EventEmitter, HostBinding, Inject, Input, OnInit, Output } from '@angular/core';
-import { CurrentDateToken } from 'app/shared/current-date';
-import { LocalStorage } from 'app/shared/storage.service';
+import { CurrentDateToken } from '../../shared/current-date';
+import { LocalStorage } from '../../shared/storage.service';
 
 const LOCAL_STORAGE_NAMESPACE = 'aio-notification/';
 
@@ -22,19 +22,19 @@ const LOCAL_STORAGE_NAMESPACE = 'aio-notification/';
 })
 export class NotificationComponent implements OnInit {
   @Input() bannerNotficationDescription = 'notification banner.';
-  @Input() dismissOnContentClick: boolean;
-  @Input() notificationId: string;
-  @Input() expirationDate: string;
+  @Input() dismissOnContentClick: boolean | undefined;
+  @Input() notificationId: string | undefined;
+  @Input() expirationDate: string | undefined;
   @Output() dismissed = new EventEmitter<void>();
 
   @HostBinding('@hideAnimation')
-  showNotification: 'show'|'hide';
+  showNotification: 'show'|'hide' = 'hide';
 
   constructor(@Inject(LocalStorage) private storage: Storage, @Inject(CurrentDateToken) private currentDate: Date) {}
 
   ngOnInit() {
     const previouslyHidden = this.storage.getItem(LOCAL_STORAGE_NAMESPACE + this.notificationId) === 'hide';
-    const expired = this.currentDate > new Date(this.expirationDate);
+    const expired = this.currentDate > new Date(this.expirationDate || 0);
     this.showNotification = previouslyHidden || expired ? 'hide' : 'show';
   }
 

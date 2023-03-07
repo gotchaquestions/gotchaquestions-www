@@ -1,13 +1,14 @@
 import {Component, ElementRef, EventEmitter, Input, OnDestroy, Output} from '@angular/core';
 import {Meta, Title} from '@angular/platform-browser';
-import {ElementsLoader} from 'app/custom-elements/elements-loader';
-import {DocumentContents, FETCHING_ERROR_ID, FILE_NOT_FOUND_ID} from 'app/documents/document.service';
-import {Logger} from 'app/shared/logger.service';
-import {fromInnerHTML} from 'app/shared/security';
-import {TocService} from 'app/shared/toc.service';
 import {asapScheduler, Observable, of, timer} from 'rxjs';
 import {catchError, observeOn, switchMap, takeUntil, tap} from 'rxjs/operators';
 import {EMPTY_HTML, unwrapHtml} from 'safevalues';
+
+import {ElementsLoader} from '../../custom-elements/elements-loader';
+import {DocumentContents, FETCHING_ERROR_ID, FILE_NOT_FOUND_ID} from '../../documents/document.service';
+import {Logger} from '../../shared/logger.service';
+import {fromInnerHTML} from '../../shared/security';
+import {TocService} from '../../shared/toc.service';
 
 
 // Constants

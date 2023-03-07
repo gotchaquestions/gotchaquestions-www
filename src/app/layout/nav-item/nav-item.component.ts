@@ -1,5 +1,5 @@
 import {Component, Input, OnChanges} from '@angular/core';
-import {NavigationNode} from 'app/navigation/navigation.model';
+import {NavigationNode} from '../../navigation/navigation.model';
 
 @Component({
   selector: 'aio-nav-item',
@@ -8,14 +8,14 @@ import {NavigationNode} from 'app/navigation/navigation.model';
 export class NavItemComponent implements OnChanges {
   @Input() isWide = false;
   @Input() level = 1;
-  @Input() node: NavigationNode;
+  @Input() node: NavigationNode = {"title": "unknown_title"};
   @Input() isParentExpanded = true;
   @Input() selectedNodes: NavigationNode[]|undefined;
 
   isExpanded = false;
   isSelected = false;
-  classes: string;
-  nodeChildren: NavigationNode[];
+  classes: string = '';
+  nodeChildren: NavigationNode[] = [];
 
   ngOnChanges() {
     this.nodeChildren =
