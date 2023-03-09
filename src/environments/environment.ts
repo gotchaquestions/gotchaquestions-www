@@ -1,7 +1,7 @@
 export const environment = {
-  legacyUniversalAnalyticsId: 'UA-TODO',
-  googleAnalyticsId: 'G-TODO',
+  legacyUniversalAnalyticsId: 'UA-', // Development id
+  googleAnalyticsId: 'G-', // Development id
 
-  production: true,
-  mode: 'stable'
+  production: false,
+  mode: 'stable',
 };

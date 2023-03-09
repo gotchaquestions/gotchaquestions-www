@@ -16,8 +16,8 @@ export const topMargin = 16;
  */
 @Injectable()
 export class ScrollService implements OnDestroy {
-  private _topOffset: number|null = null;
-  private _topOfPageElement: HTMLElement = this.document.getElementById('top-of-page') || this.document.body;
+  private _topOffset: number|undefined;
+  private _topOfPageElement: HTMLElement | undefined;
   private onDestroy = new Subject<void>();
 
   // The scroll position which has to be restored, after a `popstate` event.
@@ -50,7 +50,7 @@ export class ScrollService implements OnDestroy {
     // On resize, the toolbar might change height, so "invalidate" the top offset.
     fromEvent(window, 'resize')
         .pipe(takeUntil(this.onDestroy))
-        .subscribe(() => this._topOffset = null);
+        .subscribe(() => this._topOffset = undefined);
 
     fromEvent(window, 'scroll')
         .pipe(debounceTime(250), takeUntil(this.onDestroy))

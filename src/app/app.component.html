@@ -1,2 +1,41 @@
-<mat-toolbar>Foo</mat-toolbar>
-<router-outlet></router-outlet>
+<div id="top-of-page"></div>
+
+<a class="skip-to-content-link" href="#main-content">Skip to main content</a>
+
+<header [ngStyle]="{'background-color': isHome? 'blue': 'red'}">
+  <mat-toolbar #appToolbar class="app-toolbar no-print mat-toolbar mat-primary" color="primary"
+               [class.transitioning]="false">
+    <mat-toolbar-row class="mat-toolbar-row">
+      <a class="nav-link home" routerLink="/" [ngSwitch]="showTopMenu">
+        <img *ngSwitchCase="true" src="assets/images/logos/open/logo.png"
+             width="150" height="40" title="Home" alt="Home">
+        <img *ngSwitchDefault src="assets/images/logos/open/favicon.svg"
+             width="37" height="40" title="Home" alt="Home">
+      </a>
+      <button class="nav-link-inner" routerLinkActive="nav-link-inner-selected" mat-button aria-label="demo" routerLink="/doc/quick-start">
+        demo
+      </button>
+      <button class="nav-link-inner" routerLinkActive="nav-link-inner-selected" mat-button aria-label="more" routerLink="/doc/more">
+        learn more
+      </button>
+      <!--
+      <aio-top-menu *ngIf="showTopMenu" [nodes]="topMenuNodes" [currentNode]="currentNodes.TopBar"></aio-top-menu>
+      -->
+      <aio-theme-toggle class="right-align" #themeToggle></aio-theme-toggle>
+      <div #externalIcons class="toolbar-external-icons-container">
+        <a mat-icon-button href="https://github.com/gotchaquestions"
+           title="GitHub" aria-label="gotchaquestions on GitHub">
+          <mat-icon svgIcon="logos:github"></mat-icon>
+        </a>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</header>
+<!-- top | right | bottom | left -->
+<div class="content sidenav-container">
+  <router-outlet></router-outlet>
+
+  <footer class="no-print">
+    <aio-footer [versionInfo]="versionInfo"></aio-footer>
+  </footer>
+</div>

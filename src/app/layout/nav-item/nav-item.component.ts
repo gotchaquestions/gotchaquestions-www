@@ -8,7 +8,7 @@ import {NavigationNode} from '../../navigation/navigation.model';
 export class NavItemComponent implements OnChanges {
   @Input() isWide = false;
   @Input() level = 1;
-  @Input() node: NavigationNode = {"title": "unknown_title"};
+  @Input() node: NavigationNode|undefined;
   @Input() isParentExpanded = true;
   @Input() selectedNodes: NavigationNode[]|undefined;
 
@@ -21,7 +21,7 @@ export class NavItemComponent implements OnChanges {
     this.nodeChildren =
         this.node && this.node.children ? this.node.children.filter(n => !n.hidden) : [];
 
-    if (this.selectedNodes) {
+    if (this.selectedNodes && this.node) {
       const ix = this.selectedNodes.indexOf(this.node);
       this.isSelected = ix !== -1;  // this node is the selected node or its ancestor
       this.isExpanded = this.isParentExpanded &&

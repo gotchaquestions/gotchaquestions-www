@@ -3,7 +3,7 @@ import { Inject, Injectable } from '@angular/core';
 import { trustedResourceUrl, unwrapResourceUrl } from 'safevalues';
 
 import { formatErrorEventForAnalytics } from './analytics-format-error';
-import { WindowToken } from './window';
+import { WindowToken } from '../shared/window';
 import { environment } from '../../environments/environment';
 
 /** Extension of `Window` with potential Google Analytics fields. */
@@ -12,7 +12,7 @@ interface WindowWithAnalytics extends Window {
   gtag?(...args: any[]): void;
   /** Legacy Universal Analytics `analytics.js` field. */
   ga?(...args: any[]): void;
-}
+};
 
 @Injectable()
 /**

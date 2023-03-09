@@ -1,6 +1,6 @@
 import { ErrorHandler, Injector, VERSION } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
-import { AppModule } from '../app.module';
+import { AppModule } from 'app/app.module';
 
 import { ReportingErrorHandler } from './reporting-error-handler';
 import { AnalyticsService } from './analytics.service';

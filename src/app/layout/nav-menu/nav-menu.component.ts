@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import {CurrentNode, NavigationNode} from "../../navigation/navigation.model";
+import { CurrentNode, NavigationNode } from '../../navigation/navigation.service';
 
 @Component({
   selector: 'aio-nav-menu',
@@ -16,7 +16,7 @@ export class NavMenuComponent {
   @Input() currentNode: CurrentNode | NavigationNode | undefined;
   @Input() isWide = false;
   @Input() nodes: NavigationNode[] = [];
-  @Input() navLabel: string = '';
+  @Input() navLabel: string = 'empty navLabel';
   get filteredNodes() { return this.nodes ? this.nodes.filter(n => !n.hidden) : []; }
 
   get selectedNodes(): NavigationNode[]|undefined {

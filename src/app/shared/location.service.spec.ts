@@ -2,7 +2,7 @@ import { Injector } from '@angular/core';
 import { Location, LocationStrategy, PlatformLocation } from '@angular/common';
 import { MockLocationStrategy } from '@angular/common/testing';
 
-import { AnalyticsService } from './analytics.service';
+import { AnalyticsService } from 'app/shared/analytics.service';
 import { LocationService } from './location.service';
 import { ScrollService } from './scroll.service';
 
