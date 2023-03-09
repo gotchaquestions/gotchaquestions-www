@@ -32,4 +32,4 @@ jobs:
           git config --global user.name "$author"
           email="${email_author#*<}"; email="${email::-1}"
           git config --global user.email "$email"
-          ng deploy offscale-www --cname='gotchaquestions.com' --repo='https://'"$GITHUB_TOKEN"'@github.com/gotchaquestions/gotchaquestions.github.io' --branch='master' --message="$MSG" --name="$name" --email="$email" --no-silent
+          npx angular-cli-ghpages gotchaquestions-ng --cname='gotchaquestions.com' --repo='https://'"$GITHUB_TOKEN"'@github.com/gotchaquestions/gotchaquestions.github.io' --branch='master' --message="$MSG" --name="$name" --email="$email" --no-silent
