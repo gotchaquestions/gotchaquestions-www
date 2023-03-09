@@ -32,4 +32,6 @@ jobs:
           git config --global user.name "$author"
           email="${email_author#*<}"; email="${email::-1}"
           git config --global user.email "$email"
-          npx angular-cli-ghpages gotchaquestions-ng --cname='gotchaquestions.com' --repo='https://'"$GITHUB_TOKEN"'@github.com/gotchaquestions/gotchaquestions.github.io' --branch='master' --message="$MSG" --name="$name" --email="$email" --no-silent
+          cname='gotchaquestions.com'
+          ng build --configuration production --base-href 'https://'"$cname"
+          npx angular-cli-ghpages --dir='dist/gotchaquestions-ng' --cname="$cname" --repo='https://'"$GITHUB_TOKEN"'@github.com/gotchaquestions/gotchaquestions.github.io' --branch='master' --message="$MSG" --name="$name" --email="$email" --no-silent
