@@ -2,13 +2,13 @@ import { Injector } from '@angular/core';
 import { fakeAsync, tick } from '@angular/core/testing';
 import { DOCUMENT } from '@angular/common';
 
-import { ScrollService } from 'app/shared/scroll.service';
+import { ScrollService } from './scroll.service';
 import {
   ScrollItem,
   ScrollSpiedElement,
   ScrollSpiedElementGroup,
   ScrollSpyService,
-} from 'app/shared/scroll-spy.service';
+} from './scroll-spy.service';
 
 
 describe('ScrollSpiedElement', () => {

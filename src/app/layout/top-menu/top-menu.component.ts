@@ -1,22 +1,22 @@
 import { Component, Input } from '@angular/core';
-import { CurrentNode, NavigationNode } from '../../navigation/navigation.service';
 
 @Component({
   selector: 'aio-top-menu',
   template: `
     <nav aria-label="primary">
       <ul>
-        <li *ngFor="let node of nodes" [class.selected]="node.url === currentUrl">
-          <a class="nav-link" [href]="node.url" [title]="node.tooltip">
-            <span class="nav-link-inner">{{ node.title }}</span>
+        <li routerLinkActive="selected" routerLink="/doc/quick-start">
+          <a class="nav-link" title="demo">
+          <span class="nav-link-inner">demo</span>
+          </a>
+        </li>
+        <li routerLinkActive="selected" routerLink="/doc/more">
+          <a class="nav-link" title="more">
+            <span class="nav-link-inner">learn more</span>
           </a>
         </li>
       </ul>
     </nav>`
 })
 export class TopMenuComponent {
-  @Input() nodes: NavigationNode[] = [];
-  @Input() currentNode: CurrentNode | undefined;
-
-  get currentUrl(): string | null { return typeof this.currentNode === "undefined" ? null : this.currentNode.url; }
 }

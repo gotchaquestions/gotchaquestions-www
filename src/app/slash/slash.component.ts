@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {VersionInfo} from "../navigation/navigation.model";
 
 @Component({
   selector: 'app-slash',

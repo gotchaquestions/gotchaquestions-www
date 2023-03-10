@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
+import {VersionInfo} from "../../shared-types";
 
-import { NavigationNode, VersionInfo } from '../../navigation/navigation.service';
 
 @Component({
   selector: 'aio-footer',
@@ -8,7 +8,6 @@ import { NavigationNode, VersionInfo } from '../../navigation/navigation.service
   host: {'class': 'aio-footer'}
 })
 export class FooterComponent {
-  @Input() nodes: NavigationNode[] = [];
   @Input() versionInfo: VersionInfo | undefined;
 
   get currentYear(): number {

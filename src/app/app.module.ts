@@ -14,15 +14,8 @@ import { AppComponent } from './app.component';
 import {FooterComponent} from "./layout/footer/footer.component";
 import {TopMenuComponent} from "./layout/top-menu/top-menu.component";
 import {ThemeToggleComponent} from "./shared/theme-picker/theme-toggle.component";
-import {NavMenuComponent} from "./layout/nav-menu/nav-menu.component";
-import {NavItemComponent} from "./layout/nav-item/nav-item.component";
-import {AnalyticsService} from "./shared/analytics.service";
-import {DocumentService} from "./documents/document.service";
-import {ReportingErrorHandler} from "./shared/reporting-error-handler";
 import {Logger} from "./shared/logger.service";
-import {LocationService} from "./shared/location.service";
 import {CustomIconRegistry, SVG_ICONS} from "./shared/custom-icon-registry";
-import {NavigationService} from "./navigation/navigation.service";
 import {ScrollService} from "./shared/scroll.service";
 import {ScrollSpyService} from "./shared/scroll-spy.service";
 import {STORAGE_PROVIDERS} from "./shared/storage.service";
@@ -130,8 +123,6 @@ export const svgIconProviders = [
     FooterComponent,
     TopMenuComponent,
     ThemeToggleComponent,
-    NavMenuComponent,
-    NavItemComponent
   ],
   imports: [
     BrowserModule,
@@ -142,16 +133,13 @@ export const svgIconProviders = [
     MatButtonModule, MatSidenavModule, MatProgressBarModule, MatToolbarModule, MatIconModule
   ],
   providers: [
-    AnalyticsService,
     // Deployment,
-    DocumentService,
-    { provide: ErrorHandler, useClass: ReportingErrorHandler },
+    ErrorHandler,
+    //    { provide: ErrorHandler, useClass: ReportingErrorHandler },
     Logger,
     Location,
     { provide: LocationStrategy, useClass: PathLocationStrategy },
-    LocationService,
     { provide: MatIconRegistry, useClass: CustomIconRegistry },
-    NavigationService,
     ScrollService,
     ScrollSpyService,
     // SearchService,

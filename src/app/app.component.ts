@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {NavigationEnd, Router} from "@angular/router";
 import {filter} from "rxjs";
+import {VersionInfo} from "./shared-types";
 
-import {VersionInfo} from "./navigation/navigation.model";
 
 @Component({
   selector: 'app-root',
