@@ -15,6 +15,11 @@ import { Component, Input } from '@angular/core';
             <span class="nav-link-inner">learn more</span>
           </a>
         </li>
+        <li>
+          <a class="nav-link" title="slides">
+            <span class="nav-link-inner">slides</span>
+          </a>
+        </li>
       </ul>
     </nav>`
 })
