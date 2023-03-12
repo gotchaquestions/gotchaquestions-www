@@ -1,10 +1,11 @@
 import {Component, HostListener, OnInit, ViewChild} from '@angular/core';
-import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
-import {BehaviorSubject, filter} from "rxjs";
-import {VersionInfo} from "./shared-types";
-import {MatDrawer, MatDrawerContainer, MatSidenav} from "@angular/material/sidenav";
+import { ActivatedRoute } from "@angular/router";
+import { MatSidenav } from "@angular/material/sidenav";
 
-const sideNavView = 'SideNav';
+import { BehaviorSubject } from "rxjs";
+
+import { VersionInfo } from "./shared-types";
+
 export const showTopMenuWidth = 1150;
 export const dockSideNavWidth = 992;
 @Component({
@@ -16,7 +17,7 @@ export const dockSideNavWidth = 992;
 export class AppComponent implements OnInit {
   title = 'gotchaquestions-ng';
 
-  versionInfo: VersionInfo = {major: 0, full: "0.0.1-alpha"}
+  versionInfo: VersionInfo = {major: 0, full: "0.0.1"}
   pageId = 0
   showTopMenu: boolean = true;
   dockSideNav: boolean = false;
