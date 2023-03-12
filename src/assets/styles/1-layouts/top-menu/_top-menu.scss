@@ -7,6 +7,7 @@ $hideTopMenuWidth: $showTopMenuWidth - 1;
 $hamburgerShownMargin: 0 8px 0 0;
 $hamburgerHiddenMargin: 0 16px 0 -64px;
 
+
 // DOCS PAGE / STANDARD: TOPNAV TOOLBAR FIXED
 mat-toolbar.app-toolbar {
   position: fixed;
@@ -48,6 +49,11 @@ mat-toolbar.app-toolbar {
     height: 100%;
     margin: $hamburgerShownMargin;
     padding: 0;
+
+    :hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
 
     @media (min-width: $showTopMenuWidth) {
       // Hamburger hidden by default on large screens.
@@ -292,4 +298,18 @@ mat-toolbar.app-toolbar {
   .nav-link-inner-selected {
     background: rgba(255,255,255,.15);
   }
+}
+
+$initialBgColor: rgba(255,255,255,.15);
+
+mat-sidenav {
+    li {
+      list-style: none;
+      padding-left: 5px;
+      margin-left: -40px;
+      background-color: $initialBgColor;
+    }
+    li:hover {
+      background-color: darken($initialBgColor, 50%);
+    }
 }

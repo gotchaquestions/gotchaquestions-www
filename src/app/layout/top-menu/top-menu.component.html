@@ -1,0 +1,19 @@
+<nav aria-label="primary">
+  <ul>
+    <li routerLinkActive="selected" (click)="goAndCloseParent('/doc/quick-start')">
+      <a class="nav-link" title="demo">
+      <span class="nav-link-inner">demo</span>
+      </a>
+    </li>
+    <li routerLinkActive="selected" (click)="goAndCloseParent('/doc/more')">
+      <a class="nav-link" title="more">
+        <span class="nav-link-inner">learn more</span>
+      </a>
+    </li>
+    <li>
+      <a class="nav-link" title="slides" (click)="openSlides()">
+        <span class="nav-link-inner">slides</span>
+      </a>
+    </li>
+  </ul>
+</nav>

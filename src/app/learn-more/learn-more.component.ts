@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
+import {SlidesComponent} from "../slides/slides.component";
 
 @Component({
   selector: 'app-learn-more',
@@ -7,4 +9,14 @@ import { Component } from '@angular/core';
     '../doc/doc.scss'
   ]
 })
-export class LearnMoreComponent {}
+export class LearnMoreComponent {
+  constructor(public dialog: MatDialog) {}
+  openSlides() {
+    this.dialog.open(SlidesComponent, {
+      width: "965px",
+      height: "574px",
+      enterAnimationDuration: '1500ms',
+      exitAnimationDuration:'0ms'
+    });
+  }
+}

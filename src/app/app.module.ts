@@ -21,6 +21,8 @@ import {ScrollSpyService} from "./shared/scroll-spy.service";
 import {STORAGE_PROVIDERS} from "./shared/storage.service";
 import {windowProvider, WindowToken} from "./shared/window";
 import {svg} from "./shared/security";
+import {SlidesModule} from "./slides/slides.module";
+import {MatDialogModule} from "@angular/material/dialog";
 
 // These are the hardcoded inline svg sources to be used by the `<mat-icon>` component.
 /* eslint-disable max-len */
@@ -125,12 +127,20 @@ export const svgIconProviders = [
     ThemeToggleComponent,
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
+    BrowserModule,
     HttpClientModule,
+
+    MatButtonModule,
+    MatDialogModule,
+    MatIconModule,
+    MatProgressBarModule,
+    MatSidenavModule,
     MatToolbarModule,
-    MatButtonModule, MatSidenavModule, MatProgressBarModule, MatToolbarModule, MatIconModule
+    MatToolbarModule,
+
+    AppRoutingModule,
+    SlidesModule
   ],
   providers: [
     // Deployment,
