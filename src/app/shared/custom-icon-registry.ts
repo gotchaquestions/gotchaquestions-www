@@ -1,8 +1,9 @@
 import { ErrorHandler, InjectionToken, Inject, Injectable, Optional } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { MatIconRegistry } from '@angular/material/icon';
 import { HttpClient } from '@angular/common/http';
 import { DomSanitizer } from '@angular/platform-browser';
+
+import { MatIconRegistry } from '@angular/material/icon';
 
 import { of } from 'rxjs';
 import { unwrapHtml } from 'safevalues';

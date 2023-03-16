@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import {MatDialog} from "@angular/material/dialog";
-import {SlidesComponent} from "../slides/slides.component";
+import { MatDialog } from "@angular/material/dialog";
+import { SlidesComponent } from "../slides/slides.component";
 
 @Component({
   selector: 'app-learn-more',

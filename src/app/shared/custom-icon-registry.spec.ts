@@ -1,8 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { ErrorHandler } from '@angular/core';
-import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+
+import { MatIconRegistry } from '@angular/material/icon';
+
 import { unwrapHtml, concatHtmls } from 'safevalues';
+
 import { CustomIconRegistry, SvgIconInfo } from './custom-icon-registry';
 import { svg } from './security';
 

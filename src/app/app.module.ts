@@ -1,28 +1,29 @@
-import {ErrorHandler, NgModule} from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatToolbarModule} from "@angular/material/toolbar";
-import {HttpClientModule} from "@angular/common/http";
-import {MatButtonModule} from "@angular/material/button";
-import {MatSidenavModule} from "@angular/material/sidenav";
-import {MatProgressBarModule} from "@angular/material/progress-bar";
-import {MatIconModule, MatIconRegistry} from "@angular/material/icon";
-import {LocationStrategy, PathLocationStrategy} from "@angular/common";
+import { HttpClientModule } from "@angular/common/http";
+import { LocationStrategy, PathLocationStrategy } from "@angular/common";
 
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatButtonModule } from "@angular/material/button";
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { MatProgressBarModule } from "@angular/material/progress-bar";
+import { MatIconModule, MatIconRegistry } from "@angular/material/icon";
+import { MatDialogModule } from "@angular/material/dialog";
+
+import { FooterComponent } from "./layout/footer/footer.component";
+import { TopMenuComponent } from "./layout/top-menu/top-menu.component";
+import { ThemeToggleComponent } from "./shared/theme-picker/theme-toggle.component";
+import { Logger } from "./shared/logger.service";
+import { CustomIconRegistry, SVG_ICONS } from "./shared/custom-icon-registry";
+import { ScrollService } from "./shared/scroll.service";
+import { ScrollSpyService } from "./shared/scroll-spy.service";
+import { STORAGE_PROVIDERS } from "./shared/storage.service";
+import { windowProvider, WindowToken } from "./shared/window";
+import { svg } from "./shared/security";
+import { SlidesModule } from "./slides/slides.module";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {FooterComponent} from "./layout/footer/footer.component";
-import {TopMenuComponent} from "./layout/top-menu/top-menu.component";
-import {ThemeToggleComponent} from "./shared/theme-picker/theme-toggle.component";
-import {Logger} from "./shared/logger.service";
-import {CustomIconRegistry, SVG_ICONS} from "./shared/custom-icon-registry";
-import {ScrollService} from "./shared/scroll.service";
-import {ScrollSpyService} from "./shared/scroll-spy.service";
-import {STORAGE_PROVIDERS} from "./shared/storage.service";
-import {windowProvider, WindowToken} from "./shared/window";
-import {svg} from "./shared/security";
-import {SlidesModule} from "./slides/slides.module";
-import {MatDialogModule} from "@angular/material/dialog";
 
 // These are the hardcoded inline svg sources to be used by the `<mat-icon>` component.
 /* eslint-disable max-len */

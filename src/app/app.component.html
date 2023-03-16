@@ -15,17 +15,6 @@
         <img *ngSwitchDefault src="assets/images/logos/open/favicon.svg"
              width="37" height="40" title="Home" alt="Home">
       </a>
-      <!--
-      <button class="nav-link-inner" routerLinkActive="nav-link-inner-selected" mat-button aria-label="demo" routerLink="/doc/demo-deploy">
-        demo
-      </button>
-      <button class="nav-link-inner" routerLinkActive="nav-link-inner-selected" mat-button aria-label="more" routerLink="/doc/more">
-        learn more
-      </button>
-      -->
-      <!--
-      <aio-top-menu *ngIf="showTopMenu" [nodes]="topMenuNodes" [currentNode]="currentNodes.TopBar"></aio-top-menu>
-      -->
       <aio-top-menu *ngIf="showTopMenu" [isWide]="false"></aio-top-menu>
       <aio-theme-toggle class="right-align" #themeToggle></aio-theme-toggle>
       <div #externalIcons class="toolbar-external-icons-container">

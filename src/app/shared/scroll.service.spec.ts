@@ -1,11 +1,11 @@
-import {Location, LocationStrategy, PlatformLocation, ViewportScroller} from '@angular/common';
-import {DOCUMENT} from '@angular/common';
-import {MockLocationStrategy, SpyLocation} from '@angular/common/testing';
-import {Injector} from '@angular/core';
-import {fakeAsync, tick} from '@angular/core/testing';
+import { Location, LocationStrategy, PlatformLocation, ViewportScroller } from '@angular/common';
+import { DOCUMENT } from '@angular/common';
+import { MockLocationStrategy, SpyLocation } from '@angular/common/testing';
+import { Injector } from '@angular/core';
+import { fakeAsync, tick } from '@angular/core/testing';
 
-import {ScrollService, topMargin} from './scroll.service';
-import {SessionStorage, NoopStorage} from './storage.service';
+import { ScrollService, topMargin } from './scroll.service';
+import { SessionStorage, NoopStorage } from './storage.service';
 
 describe('ScrollService', () => {
   const scrollServiceInstances: ScrollService[] = [];

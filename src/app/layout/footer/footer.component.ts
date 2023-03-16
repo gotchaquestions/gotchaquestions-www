@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import {VersionInfo} from "../../shared-types";
 
+import { VersionInfo } from "../../shared-types";
 
 @Component({
   selector: 'aio-footer',

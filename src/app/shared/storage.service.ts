@@ -1,12 +1,17 @@
 import { InjectionToken, StaticProvider } from '@angular/core';
+
 import { WindowToken } from './window';
 
 export const LocalStorage = new InjectionToken<Storage>('LocalStorage');
 export const SessionStorage = new InjectionToken<Storage>('SessionStorage');
 
 export const STORAGE_PROVIDERS: StaticProvider[] = [
-  { provide: LocalStorage, useFactory: (win: Window) => getStorage(win, 'localStorage'), deps: [WindowToken] },
-  { provide: SessionStorage, useFactory: (win: Window) => getStorage(win, 'sessionStorage'), deps: [WindowToken] },
+  { provide: LocalStorage,
+    useFactory: (win: Window) => getStorage(win, 'localStorage'),
+    deps: [WindowToken] },
+  { provide: SessionStorage,
+    useFactory: (win: Window) => getStorage(win, 'sessionStorage'),
+    deps: [WindowToken] },
 ];
 
 export class NoopStorage implements Storage {
