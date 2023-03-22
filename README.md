@@ -4,7 +4,7 @@ GotchaQuestions website
 
 ---
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.1.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.1. Originally this website was based on angular.io but was then modified to remove Bazel and all the other nonstandard stuff.
 
 ## Development server
 
