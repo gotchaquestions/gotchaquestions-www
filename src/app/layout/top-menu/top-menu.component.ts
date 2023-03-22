@@ -18,8 +18,8 @@ export class TopMenuComponent {
               public dialog: MatDialog) {}
   openSlides() {
     this.dialog.open(SlidesComponent, {
-      width: "965px",
-      height: "574px",
+      width: "1000px",
+      height: "600px",
       enterAnimationDuration: '1500ms',
       exitAnimationDuration:'0ms'
     });

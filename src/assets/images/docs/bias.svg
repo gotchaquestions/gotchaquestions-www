@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="512px" height="512px" viewBox="0 0 612 792" enable-background="new 0 0 612 792" xml:space="preserve">
+<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+     width="512px" height="512px" viewBox="0 0 612 792"
+class="svg">
+  <style>
+    path {
+      fill: black;
+    }
+    @media (prefers-color-scheme: dark) {
+      path { fill: white; }
+    }
+  </style>
 <g>
 	<path fill-rule="evenodd" clip-rule="evenodd" d="M126.881,433.763c-0.22,3.997-0.474,7.097-0.546,10.2
 		c-0.382,16.322-0.799,32.645-0.949,48.97c-0.016,1.716,1.192,4.287,2.596,5.041c12.42,6.672,21.877,16.502,29.099,28.246
