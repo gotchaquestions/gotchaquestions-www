@@ -85,10 +85,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "gotchaquestions-ng:build:production"
+              "buildTarget": "gotchaquestions-ng:build:production"
             },
             "development": {
-              "browserTarget": "gotchaquestions-ng:build:development"
+              "buildTarget": "gotchaquestions-ng:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -96,7 +96,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "gotchaquestions-ng:build"
+            "buildTarget": "gotchaquestions-ng:build"
           }
         },
         "test": {

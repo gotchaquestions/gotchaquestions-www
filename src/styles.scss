@@ -33,6 +33,17 @@ $gotchaquestions-ng-theme: mat.define-light-theme((
 // that you are using.
 @include mat.all-component-themes($gotchaquestions-ng-theme);
 
+@include mat.core-theme($gotchaquestions-ng-theme);
+@include mat.button-theme($gotchaquestions-ng-theme);
+
+// Apply the light theme only when the user prefers light themes.
+@media (prefers-color-scheme: light) {
+  // Use the `-color` mixins to only apply color styles without reapplying the same
+  // typography and density styles.
+  @include mat.core-color($gotchaquestions-ng-theme);
+  @include mat.button-color($gotchaquestions-ng-theme);
+}
+
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
