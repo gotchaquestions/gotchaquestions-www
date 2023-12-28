@@ -113,7 +113,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles/main.scss",
+              "src/assets/styles/main.scss",
               {
                 "inject": false,
                 "input": "src/assets/styles/custom-themes/dark-theme.scss",

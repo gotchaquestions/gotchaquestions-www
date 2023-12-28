@@ -9,3 +9,50 @@
 @use '@angular/material' as mat;
 
 @include mat.core();
+
+$dark-io-primary: mat.define-palette(mat.$blue-palette, 700, 600, 900);
+$dark-io-accent: mat.define-palette(mat.$red-palette, 700, 600, 800);
+$dark-io-warn: mat.define-palette(mat.$red-palette);
+
+$dark-theme: mat.define-dark-theme((
+  color: (
+    primary: $dark-io-primary,
+    accent: $dark-io-accent,
+    warn: $dark-io-warn
+  ),
+  // Only include `typography` and `density` in the default dark theme.
+  typography: mat.define-typography-config(),
+  density: 0,
+));
+
+// Apply the dark theme by default
+@include mat.core-theme($dark-theme);
+@include mat.button-theme($dark-theme);
+
+// Apply the light theme only when the user prefers light themes.
+@media (prefers-color-scheme: light) {
+  $light-io-primary: mat.define-palette(mat.$blue-palette, 700, 600, 800);
+  $light-io-accent: mat.define-palette(mat.$red-palette, 700, 600, 800);
+  $light-io-warn: mat.define-palette(mat.$red-palette);
+  $light-theme: mat.define-light-theme((
+    color: (
+      primary: $light-io-primary,
+      accent: $light-io-accent,
+      warn: $light-io-warn
+    ),
+  ));
+
+  // Use the `-color` mixins to only apply color styles without reapplying the same
+  // typography and density styles.
+  @include mat.core-color($light-theme);
+  @include mat.button-color($light-theme);
+}
+
+.mat-mdc-text-field-wrapper:not(.mdc-text-field--outlined) .mat-mdc-form-field-infix {
+  padding-top: 50px;
+  padding-bottom: 8px;
+}
+
+.mat-mdc-form-field:not(.mat-form-field-no-animations) .mdc-text-field__input {
+  padding-left: 5px;
+}
