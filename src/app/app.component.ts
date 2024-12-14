@@ -10,10 +10,11 @@ import { VersionInfo } from "./shared-types";
 export const showTopMenuWidth = 1150;
 export const dockSideNavWidth = 992;
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  host: {'class': 'page-home'}
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    host: { 'class': 'page-home' },
+    standalone: false
 })
 export class AppComponent implements OnInit {
   title = 'gotchaquestions-ng';

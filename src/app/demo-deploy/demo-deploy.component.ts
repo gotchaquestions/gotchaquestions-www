@@ -236,12 +236,13 @@ class ChatUI {
 }
 
 @Component({
-  selector: 'app-demo-deploy',
-  templateUrl: './demo-deploy.component.html',
-  styleUrls: [
-    '../doc/doc.scss',
-    "./demo-deploy.component.scss"
-  ]
+    selector: 'app-demo-deploy',
+    templateUrl: './demo-deploy.component.html',
+    styleUrls: [
+        '../doc/doc.scss',
+        "./demo-deploy.component.scss"
+    ],
+    standalone: false
 })
 export class DemoDeployComponent implements AfterViewInit, OnDestroy {
   private mediaRecorder: MediaRecorder | undefined;

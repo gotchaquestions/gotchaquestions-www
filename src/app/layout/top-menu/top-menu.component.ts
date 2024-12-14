@@ -6,8 +6,9 @@ import { Router } from "@angular/router";
 import { SlidesComponent } from "../../slides/slides.component";
 
 @Component({
-  selector: 'aio-top-menu',
-  templateUrl: './top-menu.component.html'
+    selector: 'aio-top-menu',
+    templateUrl: './top-menu.component.html',
+    standalone: false
 })
 export class TopMenuComponent {
   @Input() isWide = false;

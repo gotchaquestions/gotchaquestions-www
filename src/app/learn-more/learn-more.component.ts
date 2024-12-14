@@ -3,11 +3,12 @@ import { MatDialog } from "@angular/material/dialog";
 import { SlidesComponent } from "../slides/slides.component";
 
 @Component({
-  selector: 'app-learn-more',
-  templateUrl: './learn-more.component.html',
-  styleUrls: [
-    '../doc/doc.scss'
-  ]
+    selector: 'app-learn-more',
+    templateUrl: './learn-more.component.html',
+    styleUrls: [
+        '../doc/doc.scss'
+    ],
+    standalone: false
 })
 export class LearnMoreComponent {
   constructor(public dialog: MatDialog) {}
